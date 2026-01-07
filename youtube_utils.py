@@ -3,6 +3,7 @@ import yt_dlp
 import json
 import re
 from urllib.parse import urlparse, parse_qs
+import streamlit as st
 
 # Définir la fonction permettant d'extraire l'identifiant de la vidéo YouTube afin que l'on puisse 
 # l'utiliser pour obtenir la transcription
@@ -24,6 +25,8 @@ def extraire_id_youtube(youtube_url: str) -> str:
 
 
 # Définir la fonction permettant d'obtenir la transcription de la vidéo YouTube identifiée
+
+@st.cache_data
 def obtenir_transcription_ytdlp(video_id: str, langues_preferees: list = None) -> str:
     """
     Utilise yt-dlp pour obtenir et extraire la transcription d'une vidéo YouTube.
