@@ -5,6 +5,7 @@ import streamlit as st
 from youtube_utils import extraire_id_youtube, obtenir_transcription_ytdlp
 from analyseur_llm import analyser_transcription
 
+
 # Configuration de la page
 
 # Définir le titre de l'onglet et l'icône, avec le mode wide afin d'utiliser toute la largeur de l'écran

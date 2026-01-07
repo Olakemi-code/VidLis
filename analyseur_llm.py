@@ -5,6 +5,7 @@
 import os
 from dotenv import load_dotenv
 from google import genai
+import streamlit as st
 
 # Charger les variables du fichier .env  contenant la clé api :
 load_dotenv()
@@ -18,7 +19,11 @@ if not API_KEY:
     raise ValueError("La clé API GEMINI est introuvable dans le fichier .env")
 
 # On connecte officiellement le client LLM avec la clé API :
-client = genai.Client(api_key=API_KEY)
+@st.cache_resource
+def get_client():
+    return genai.Client(api_key=API_KEY)
+
+client = get_client()
 
 print("Initialisation du client LLM terminée")
 # Le client LL est ainsi initialisé et peut faire son boulot.
