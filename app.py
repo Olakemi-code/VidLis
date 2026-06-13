@@ -12,7 +12,7 @@ from analyseur_llm import analyser_transcription
 st.set_page_config(page_title="RESUME VIDEO IA", page_icon=":movie_camera:", layout="wide")
 
 # Afficher le titre principal en haut de la page
-st.title(" 🎥Résumé Vidéo IA")
+st.title(" VidLis ")
 
 # Zone de saisie où l'utilisateur colle le lien de la vidéo Youtube dont il veut la transcription résumée
 url_video = st.text_input("🔗 URL de la vidéo YouTube :", placeholder="https://www.youtube.com/watch?v=...")

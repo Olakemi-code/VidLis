@@ -176,7 +176,7 @@ def telecharger_et_parser_sous_titres(url: str, format_type: str) -> str:
             return parser_srv(content)
         else:
             # Essayer de deviner le format
-            return parser_generique(content)
+            return parser_generique(content) 
             
     except Exception as e:
         print(f"  Erreur lors du téléchargement/parsing: {e}")
